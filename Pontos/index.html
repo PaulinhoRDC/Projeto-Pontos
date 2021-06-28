@@ -1,0 +1,86 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <style>
+        html {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            }
+
+            body {
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            
+        }
+
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi">
+    <meta name="HandheldFriendly" content="true" />
+    <title>Pontos</title>
+
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.hypatiamat.com/images/favicon.ico">
+
+    
+</head>
+    <body >
+
+        <div >
+            <script>
+            var PleaseRotateOptions = {
+                onlyMobile: true,
+                forcePortrait: false,
+                message: "Por Favor Rode o Ecrã",
+                subMessage: "(ou clique para continuar)",
+                allowClickBypass: true
+            }
+            </script>
+            
+            
+            <script src="auxiliares.js"></script>           
+            <script src="pleaserotate.js"></script>
+            <script src="Jogo.js"></script> 
+            <script src="Menu.js"></script>
+            <script src="worker.js"></script>
+
+            
+        </div>
+
+    </body>
+</html>
+
+<script>
+var config={
+    type: Phaser.CANVAS,
+    width: window.innerWidth * window.devicePixelRatio,
+    height: window.innerHeight * window.devicePixelRatio,
+    dom: {
+        createContainer: true
+    },
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: 1331,
+        height: 784
+    },
+    render: {
+        pixelArt: false
+    },
+    backgroundColor: "#ffffff",
+    dom: {
+        createContainer: true
+    },
+    scene:  [Menu , Jogo ]
+};
+
+var game = new Phaser.Game(config);
+
+
+</script>
